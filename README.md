@@ -12,7 +12,7 @@
 При создании класса мы упрощаем его до тех атрибутов и методов, которые нужны именно в этом коде, не пытаясь описать его целиком и отбрасывая всё второстепенное.    
 ____  
 
-**Class   
+**Class**   
 -данные(свойства)   
 > prop = ‘value’  
 - методы(действия)   
@@ -21,28 +21,28 @@ ____
 >    self.y = y  
 >  
 
-**Добавить св-во  
+**Добавить св-во**  
 >  Сlass.prop = ‘value’  
 >  setattr(Class, ‘prop’, ‘value’)  
 
-**Читать св-во  
+**Читать св-во**  
 >  c = Сlass.prop   - если нет св-ва, возвращает ошибку  
 > getattr(Class, prop, False)  - если нет св-ва, возвращает третий аргумент  
 
-**Наличие св-ва  
+**Наличие св-ва**  
 >  hasattr(Class, prop)   - учитывает наследование  
  
 **Удалить св-во  
 >  del Сlass.prop   - если нет св-ва, возвращает ошибку  
 >  delattr(Class, prop)  - если нет св-ва, возвращает ошибку  
 
-**Пространство имен  
+**Пространство имен**  
 >  Class.__dict__  
 
-**Все свойства экз.класса  
+**Все свойства экз.класса**  
 >  dir(obj)  
 
-**Описание класса, комментарий  
+**Описание класса, комментарий**  
 >  Class.__doc__  
 
 **Метод класса**  
@@ -57,7 +57,7 @@ ____
 >     return x*x + y*y
 >   
 
-**Режим доступа (механизм инкапсуляции)  
+**Режим доступа (механизм инкапсуляции)** 
 >  attr  - публичное свойство  
 >  _attr  - режим доступа protected  
 >  __attr  - режим доступа private  
@@ -65,12 +65,11 @@ ____
 > pip install accessify - защитить методы от внешнего доступа
 ____  
 
-**Магические методы - методы, которые вызываются интерпретатором для выполнения различных операций над объектами.  
+**Магические методы** - методы, которые вызываются интерпретатором для выполнения различных операций над объектами.  
 
 | Метод |	Что делает |
 |----------------:|----------------:|
-|  __new__(cls)   
-   return super().__new__(cls)  |  Создание объекта cls ссылается на текущий класс должен возвращать адрес нового созданного объекта   |
+|  __new__(cls)   return super().__new__(cls)  |  Создание объекта cls ссылается на текущий класс должен возвращать адрес нового созданного объекта   |
 | __init__(self) | Инициализатор объекта |  
 | __del__(self) | Финализатор объекта |  
 | __setattr__(self, key, value) | Автоматически вызывается при изменении свойства key класса |  
@@ -102,31 +101,44 @@ ____
 
 ____  
 
-**Oбъект-свойство property  
-| объект-свойство property
-1. prop = property (getter, setter)
-
-2. @property
-    def name(self):
-          return self.__name
-
-    @name.setter
-    def name(self, name):
-          self.__name = name
-
-    @name.deleter
-     def name(self):
-           del self.__name |  Для работы с приватными локальными свойствами экземпляров классов  |  
-| коллекция  __slots__
-__slots__ = (’x’, ‘y’) | Ограничивает допустимый набор имен атрибутов объекта только перечисленными именами
-- ограничение создаваемых локальных свойств
-- уменьшение занимаемой памяти, атрибут __dict__ удаляется
-- ускорение работы с локальными свойствами  | 
+**Oбъект-свойство property**    
+> объект-свойство property  
+> 1. prop = property (getter, setter)  
+>  
+> 2. @property  
+>    def name(self):  
+>          return self.__name  
+>
+>    @name.setter  
+>    def name(self, name):  
+>          self.__name = name  
+>
+>    @name.deleter  
+>     def name(self):  
+>           del self.__name |  Для работы с приватными локальными свойствами экземпляров классов  
+     
+> коллекция  __slots__  
+> __slots__ = (’x’, ‘y’) | Ограничивает допустимый набор имен атрибутов объекта только перечисленными именами  
+> - ограничение создаваемых локальных свойств  
+> - уменьшение занимаемой памяти, атрибут __dict__ удаляется  
+> - ускорение работы с локальными свойствами     
 ____  
 
-**Метакласс:
-![]()  
+**Метакласс:**  
+![](https://github.com/Dv-nn/Python--Object-Oriented-Programming/blob/main/img/img1.PNG)   
+![](https://github.com/Dv-nn/Python--Object-Oriented-Programming/blob/main/img/img2.PNG)   
 
+**Dataclass:**  
+![](https://github.com/Dv-nn/Python--Object-Oriented-Programming/blob/main/img/img3.PNG)    
+![](https://github.com/Dv-nn/Python--Object-Oriented-Programming/blob/main/img/img4.PNG)  
+
+**Дескриптор:**  
+![](https://github.com/Dv-nn/Python--Object-Oriented-Programming/blob/main/img/img5.PNG) 
+
+____  
+![](https://github.com/Dv-nn/Python--Object-Oriented-Programming/blob/main/img/img6.PNG) 
+
+____  
 
  [ОOП Python  :point_left:](https://github.com/Dv-nn/Python--Object-Oriented-Programming/blob/main/ОOП_Python.pdf)   
 
